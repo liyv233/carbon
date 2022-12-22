@@ -55,7 +55,7 @@ export default {
       logo.style.width = hander[0].offsetHeight + "px";
     },
     toLogin() {
-      if (!localStorage.getItem("token")) {
+      if (!localStorage.getItem("nick")) {
         this.$router.push("/login");
       }
     },
@@ -63,18 +63,28 @@ export default {
       this.$http
         .delete("/user")
         .then((rep) => {
-          if (rep.code == 0) {
-            this.$router.push("/");
+          if (rep.data.code == 0) {
+           this.$router.push('/')
+            localStorage.removeItem("nick") ;
+             this.Phander = '登录'
+            this.$msg.fail('注销成功');
           } else {
-            this.$msg.fail(res.info);
+            this.$msg.fail(rep.data.info);
           }
         })
         .catch((error) => {
           console.log(error);
         });
     },
+    init() {
+      if(localStorage.getItem("nick"))  {
+        this.Phander = localStorage.getItem("nick") ;
+      }
+    }
   },
-  created() {},
+  created() {
+this.init()
+  },
   mounted() {
     this.getHanderwidth();
   },

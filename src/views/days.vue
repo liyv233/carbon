@@ -3,14 +3,22 @@
     <div class="days-con-box" ref="chart">
 
     </div>
-            <div class="find-box">
+            <div class="find-box" v-if="this.trees.length>0">
           <span>查询第</span>
           <div class="in">
-            <input type="text" class="inWeek" :value= this.week>
+            <input type="text" class="inWeek" v-model = week>
           </div>
           <span>周以前的碳足迹</span>
 
           <span class="findBtn" @click="find">查询</span>
+        </div>
+        <div class="null-box" v-else>
+          <div class="null-img"></div>
+         <div class="null">
+           <span>您没有任何记录，请</span>
+          <span class="toHome" @click="toHome">点击</span>
+          <span>前往添加第一条记录</span>
+         </div>
         </div>
   </div>
 </template>
@@ -37,7 +45,7 @@ export default {
       let option = {
         title: {
           // this.week + '周前'
-          text: "过去一周",
+          text: '过去 ' + this.week  + '周'
         },
         tooltip: {},
         legend: {
@@ -46,21 +54,21 @@ export default {
          color: [  '#FF4203','#6a9955'],
         xAxis: {
           // this.times
-          data: ["2022-12-12", "2022-12-13", "2022-12-14", "2022-12-15", "2022-12-16", "2022-12-17","2022-12-18"],
+          data:  this.times
         },
         yAxis: {},
         series: [
           {
             name: "carbon",
-            type: "bar",
+            type: "line",
             // this.values
-            data: [5,  2, 6, 5, 4, 4,6],
+            data:  this.values
           },
           {
             name:'tree' ,
-            type: "bar",
+            type: "line",
             // this.trees
-            data: [0.4, 10, 3,5,  6, 4,1],
+            data:this.trees
           }
         ],
       };
@@ -72,30 +80,34 @@ async init(week) {
    this.times = []
     this.values = []
     this.trees = []
- const res = await this.$http.get('/carbon/'+ this.week)
+ const  {data:res} = await this.$http.get('/carbon/'+ week)
+
  if(res.code == 0) {
-    res.data.array.forEach(element => {
-        this.times.push(element.savetime)
-        this.values.push(element.value)
-        this.trees.push((element.value).toFixed(2))
-    });
+  console.log(res);
+ for (let index = 0; index < res.data.length; index++) {
+    this.times.push(res.data[index].savetime)
+        this.values.push(res.data[index].value)
+        this.trees.push((res.data[index].value/270).toFixed(2))
+         this.getEchartData()  
+ }
 
  }
 } ,
 find() {
  if(this.week > 0) {
+  console.log(this.week);
   this.init(this.week)
  }
+} ,
+toHome() {
+  this.$router.push('/')
 }
 
 
   },
   created() {
-    // this.init(1)
+    this.init(1)
   },
-  mounted() {
-     this.getEchartData()  
-  }
 };
 </script>
 <style lang="less" scoped>
@@ -155,5 +167,40 @@ find() {
     }
     border-radius: 1vw;
 }
+}
+.null-box {
+  .null-img {
+    position: absolute;
+    top: 8vh;
+    left: 42%;
+    width: 18vw;
+    height: 30vh;
+    background: url('../../public/static/images/nodata.4d721f9d.png') no-repeat center center;
+    background-size: cover;
+    @media (max-width:1000px) {
+      width: 100vw;
+      left: 0;
+
+
+      background-size: contain;
+     
+    }
+  }
+.null {
+  height: 3vh;
+  transform: translateY(-9vh);
+}
+  .toHome {
+      
+            color: rgb(184, 124, 124);
+            border-bottom: 1px solid rgb(184, 124, 124);
+            cursor: pointer;
+              margin: 1vh ;
+              
+            @media (max-width:1000px) {
+               width: 5vh;
+               
+            }
+  }
 }
 </style>

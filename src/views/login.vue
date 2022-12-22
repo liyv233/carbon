@@ -69,25 +69,34 @@ export default {
  async  login () {
   
         if(this.phone && this.password != '') { 
-      const res = await  this.$http.post('/user/login' ,
+      const {data:res} = await  this.$http.post('/user/login' ,
       {
         phone: this.phone ,
         password : this.password
       }
         )
+        console.log(res);
          if(res.code == 1) {
-           this.$msg.fail(res.msg)
+          
+           if(res.info == '你已经登录过辣') {
+             this.$msg.fail(res.info)
+            setTimeout(()=> {
+            this.$router.push('/')
+          },100)
+           } else {
+             this.$msg.fail(res.data)
+           }
         } else if(res.code == 0) {
-          localStorage.setItem('nick',res.date.nick)
-          localStorage.setItem('token',res.msg)
-          this.$msg.fail('登录成功！')
+      
+          localStorage.setItem('nick',res.data.nick)
+          this.$msg.fail('登录成功')
           setTimeout(()=> {
             this.$router.push('/')
           },100)
         }
     }
     else {
-       this.$msg.fail('账号/密码不能为空！')
+       this.$msg.fail('账号/密码不能为空')
     }
 
 

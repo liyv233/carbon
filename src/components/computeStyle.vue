@@ -21,7 +21,12 @@ export default {
             this.$$emit('compute_one')
         } ,
         to_day() {
-            this.$router.push('/days')
+              if(localStorage.getItem("nick"))  {
+        this.$router.push('/days')
+      } else {
+        this.$msg.fail('您还没有登录哦')
+      }
+           
         }
     },
 

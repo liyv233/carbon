@@ -89,14 +89,15 @@ export default {
       }
 
       if (this.username && this.phone && this.password != "") {
-        const res = await this.$http.post("/user/register", {
+        const  {data:res} = await this.$http.post("/user/register", {
           nick: this.username,
           phone: this.phone,
           password: this.password,
         });
-    console.log(res);
         if (res.code == 1) {
-          this.$msg.fail(res.info);
+          if(res.info == '参数错误')
+         { this.$msg.fail(res.info);}
+          else { this.$msg.fail(res.data);}
         } else if (res.code == 0) {
           this.$msg.fail("注册成功！请重新登录");
           this.$router.push("/login");

@@ -30,9 +30,9 @@
           
             </div>
             <p>{{this.comItem.unit}}</p>
-           
-             <button type="primary" @click="compute()" style="margin-left:5vw;" > 计算 </button>
-              <button type="primary" @click="addItem()" style="margin-left:1vw;"> 添加 </button>
+            <button type="primary" @click="addItem()" style="margin-left:5vw;"> 添加 </button>
+             <button type="primary" @click="compute()" style="margin-left:1vw;" > 计算 </button>
+             
         </div>
         <div class="day-items-box" >
           <!-- -->
@@ -148,11 +148,13 @@ del(index) {
 } ,
 // 更新碳轨迹
 async updata() {
- const res = await this.$http.post('/carbon' , {
-  value: this.carbon
+  console.log(this.carbon);
+ const  {data:res} = await this.$http.post('/carbon' , {
+  value: Number(this.carbon)
  })
+ console.log(res);
  if(res.code == 0) {
-  this.$msg.fail('更新成功！')
+  this.$msg.fail('更新成功')
  } else {
   this.$msg.fail(res.info)
  }
@@ -192,6 +194,7 @@ async updata() {
     display: flex;
     align-items: center;
     justify-content: center;
+  
     p {
        @media (max-width:450px) {
               font-size: .2vw ;
@@ -303,6 +306,7 @@ async updata() {
     margin-top: 1vh;
      color: rgb(184, 124, 124);
    border-bottom: 1px solid rgb(184, 124, 124);
+   cursor: pointer;
   }
 }
 </style>
