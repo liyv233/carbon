@@ -121,10 +121,13 @@ this.init()
       justify-content: center;
       // background-color: black;
       .title {
-        font-size: 1.5vw;
+        font-size: 1.4em;
         font-weight: 900;
         color: white;
         letter-spacing: 0.2vw !important;
+        @media (max-width:500px) {
+           font-size: 1.1em;
+        }
       }
     }
   }
@@ -140,10 +143,10 @@ this.init()
     span {
       font-weight: 900;
       color: white;
-      font-size: 0.3em;
+      font-size: 1.4em;
 
-      @media (min-width: 1200px) {
-        font-size: 1vw;
+      @media (max-width: 500px) {
+        font-size: 1.1em;
         font-weight: 600;
       }
     }

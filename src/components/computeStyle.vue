@@ -45,8 +45,8 @@ export default {
  @media (max-width: 1000px) {
     width: 13vw;
   }
-   @media (max-width: 400px) {
-    width: 15vw;
+   @media (max-width: 450px) {
+    width: 18vw;
   }
     .img {
             width:60%;
@@ -58,7 +58,7 @@ export default {
         }
         .title {
             width: 100%;
-            font-size: .8vw;
+            font-size: 1em;
             font-weight: 900;
             text-align: center;
             color: rgb(12, 165, 81);

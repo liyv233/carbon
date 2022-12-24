@@ -136,9 +136,9 @@ toHome() {
   span {
     font-size: 1vw;
     color: rgb(105, 105, 103);
-    @media (max-width:1000px) {
-      font-size: .7vw;
-    }
+    // @media (max-width:1000px) {
+    //   font-size: .7vw;
+    // }
   }
 
   .in {
@@ -162,9 +162,9 @@ toHome() {
   margin-left: 2vw;
     font-size: 1vw;
     cursor: pointer;
-    @media (max-width:1000px) {
-      font-size: .7vw;
-    }
+    // @media (max-width:1000px) {
+    //   font-size: .7vw;
+    // }
     border-radius: 1vw;
 }
 }

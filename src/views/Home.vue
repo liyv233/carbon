@@ -30,9 +30,12 @@
           
             </div>
             <p>{{this.comItem.unit}}</p>
-            <button type="primary" @click="addItem()" style="margin-left:5vw;"> 添加 </button>
-             <button type="primary" @click="compute()" style="margin-left:1vw;" > 计算 </button>
+
              
+        </div>
+        <div class="btn-line">
+                      <button type="primary" @click="addItem()" > 添加 </button>
+             <button type="primary" @click="compute()" style="margin-left:1vw;margin-top:2vh;" > 计算 </button>
         </div>
         <div class="day-items-box" >
           <!-- -->
@@ -195,11 +198,11 @@ async updata() {
     align-items: center;
     justify-content: center;
   
-    p {
-       @media (max-width:450px) {
-              font-size: .2vw ;
-            }
-    }
+    // p {
+    //    @media (max-width:450px) {
+    //           font-size: .2vw ;
+    //         }
+    // }
 
   }
       .num-box {
@@ -225,13 +228,11 @@ async updata() {
             border-radius: .3vw;
             cursor: pointer;
             @media (max-width:850px) {
-              font-size: .4vw;
               padding: 0 3vw;
             height: 2vh;
             line-height: 2vh;
             }
            @media (max-width:450px) {
-              font-size: .2vw;
               padding: 0 4vw;
             height: 2.5vh;
             line-height: 2.5vh;
@@ -245,8 +246,8 @@ async updata() {
         width: 40vw;
         margin:auto;
         margin-top: 2vh;
-        @media (max-width:1000px) {
-          width: 60vw;
+        @media (max-width:1200px) {
+          width: 80vw;
         }
       }
         .items {
@@ -256,16 +257,11 @@ async updata() {
          border-bottom: 1px solid rgb(211, 205, 205);
           color: rgb(92, 92, 92);
          
-            @media (max-width:850px) {
-              font-size: 1vw;
-              
-            }
           span {
                display: inline-block;
-         
             width: 5vw;
-            @media (max-width:850px) {
-              width: 10vw;
+            @media (max-width:900px) {
+              width: 10vh;
             }
           }
           .del {

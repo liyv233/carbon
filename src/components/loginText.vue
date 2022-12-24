@@ -49,7 +49,7 @@ watch : {
  margin: auto;
  border-bottom: 1px solid rgb(6, 141, 85);
     @media (max-width:1000px) {
-         font-size: .8vw !important;
+         /* font-size: .8vw !important; */
          margin-bottom: 1vh;
     }
 }

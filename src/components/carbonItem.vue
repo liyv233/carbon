@@ -64,16 +64,17 @@ export default {
     height: 80%;
     cursor: pointer;
       @media (max-width:500px) {
-        width: 50%;
-    height: 50%;
+        width: 60%;
+    height: 60%;
       background-size:contain !important;
     }
     }
     .name {
         color: rgb(129, 134, 134);
-  font-size: .1rem;
-        font-weight: 600;
         cursor: pointer;
+        @media (max-width:450px) {
+           font-size: .9em;
+        }
     }
 }
 </style>

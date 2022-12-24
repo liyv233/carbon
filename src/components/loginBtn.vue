@@ -34,12 +34,11 @@ data() {
     text-align: center;
     line-height: 3VW;
     height: 100%;
+    font-size: 1em !important;
     color: white;
    border-radius: 5% ;
       @media (max-width:1000px) {
-        padding: .5vh 0 ;
-        font-size: .8vw !important;
-        
+        padding: 1vh 0 ;
     }
 }
 
