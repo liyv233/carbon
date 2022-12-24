@@ -55,18 +55,17 @@ export default {
     align-items: center;
     
     // and (orientation: landscape)
-    @media (min-width:1000px)  {
+    @media (min-width:1000px )  {
         width: 6vw;
     }
     .itemimg {
-     background-size:contain;
+     background-size:contain !important;
     width: 80%;
     height: 80%;
     cursor: pointer;
-      @media (max-width:500px) {
+      @media (max-width:1000px) {
         width: 60%;
     height: 60%;
-      background-size:contain !important;
     }
     }
     .name {

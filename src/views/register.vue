@@ -7,7 +7,7 @@
         <Login-top middleTop="注册"></Login-top>
         <Login-text
           label="昵称"
-          placeholder="请输入包含1-12位字符或数字的昵称"
+          placeholder="昵称应为1-12位字符或数字"
           rule="^.{1,12}$"
           @inputContent="(res) => (username = res)"
         

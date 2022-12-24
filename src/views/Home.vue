@@ -25,7 +25,10 @@
           <p >{{this.comItem.name}}</p>
             <div class="num-box">
                 <button type="primary" @click="reduce()"> - </button>
-            <p style="margin-left: 1vw;margin-right: 2vw;"> {{ this.comItem.count }} </p>
+            <!-- <p style="margin-left: 1vw;margin-right: 2vw;"> {{ this.comItem.count }} </p> -->
+            <div class="in">
+            <input type="text" class="inWeek" v-model = comItem.count>
+          </div>
             <button type="primary" @click="add()" > + </button>
           
             </div>
@@ -216,6 +219,19 @@ async updata() {
             }
 
     }
+      .in {
+    margin: 0 1vw;
+    border-bottom: 1px solid rgb(116, 112, 112);
+    input {
+      width: 3vw;
+      text-align: center;
+      border: 0;
+
+        @media (max-width:1000px) {
+    width: 10vw;
+    }
+    }
+  }
         button {
             height: 3vh;
             padding: 0 1.5vw;
@@ -265,7 +281,7 @@ async updata() {
             }
           }
           .del {
-            width: 3vw;
+            width: 3.5vw;
             color: rgb(184, 124, 124);
             border-bottom: 1px solid rgb(184, 124, 124);
             cursor: pointer;

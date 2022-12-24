@@ -42,15 +42,21 @@ watch : {
 
 .van-field {
     height: 3vw;
-    font-size: 1vw !important;
+    font-size: 1em !important;
  width: 80% !important;
  justify-content: center;
  align-items: center;
  margin: auto;
+   margin-bottom: 1vh;
  border-bottom: 1px solid rgb(6, 141, 85);
-    @media (max-width:1000px) {
-         /* font-size: .8vw !important; */
-         margin-bottom: 1vh;
+ 
+    @media (max-width:450px) {
+         font-size: .8em !important;
+         margin-bottom: 2vh;
+    }
+
+   @media (max-width:1000px) {
+         margin-bottom: 2vh;
     }
 }
 

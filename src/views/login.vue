@@ -173,7 +173,7 @@ background-size: cover;
    }
    .registerBtn {
        background-color: rgb(221, 212, 217) ;
-       border: 1px solid rgb(51, 180, 222);
+       border: 1px solid rgb(170, 177, 171);
        
    }
  

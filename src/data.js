@@ -3,7 +3,7 @@ const carbon_data = [
    [{
     id: 1 ,
     img:'static/images/maoj.png',
-    name:'涤纶制品' ,
+    name:'涤纶物' ,
     count:0 , 
     unit: 'kg' ,
     carbon_unit:'kg' ,
@@ -232,7 +232,7 @@ const carbon_data = [
     {
         id: 6 ,
         img:'static/images/dr.png',
-        name:'集中供暖' ,
+        name:'地暖' ,
         count:0 , 
         unit: '平米/天' ,
         carbon_unit:'kg' ,
@@ -298,7 +298,7 @@ const carbon_data = [
     {
         id: 5 ,
         img:'static/images/gcart.png',
-        name:'高耗车辆' ,
+        name:'高耗车' ,
         count:0 , 
         unit: 'Km' ,
         carbon_unit:'kg' ,
@@ -307,7 +307,7 @@ const carbon_data = [
     {
         id: 6 ,
         img:'static/images/mcart.png',
-        name:'中耗车辆' ,
+        name:'中耗车' ,
         count:0 , 
         unit: 'Km' ,
         carbon_unit:'kg' ,
@@ -316,7 +316,7 @@ const carbon_data = [
     {
         id: 7 ,
         img:'static/images/scart.png',
-        name:'低耗车辆' ,
+        name:'低耗车' ,
         count:0 , 
         unit: 'Km' ,
         carbon_unit:'kg' ,

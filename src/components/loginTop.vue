@@ -23,12 +23,14 @@ props:['middleTop']
  display: flex;
     background-color: white;
   
+  
     @media (max-width:1000px) {
-        margin-top: 8vh;
-        margin-bottom: 3vh;
+        margin-top: 6vh;
+        margin-bottom: 5vh;
     }
     .top {
         margin: auto;
+          font-size: 1.1em !important;
     }
 }
 </style>

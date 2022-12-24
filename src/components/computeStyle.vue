@@ -82,7 +82,7 @@ export default {
         .img {
         background:url('../../public/static/images/数据 折线图.png') no-repeat center center;
         background-size: cover;
-      @media (max-width: 1000px) {
+      @media (max-width: 1400px) {
      background-size: contain;
      scale: 1.2;
        height: 5vh;

@@ -134,7 +134,7 @@ toHome() {
     }
 
   span {
-    font-size: 1vw;
+    font-size: 1.1em;
     color: rgb(105, 105, 103);
     // @media (max-width:1000px) {
     //   font-size: .7vw;
@@ -160,7 +160,7 @@ toHome() {
   background-color: #73c991;
   color: white;
   margin-left: 2vw;
-    font-size: 1vw;
+    font-size: 1em;
     cursor: pointer;
     // @media (max-width:1000px) {
     //   font-size: .7vw;
