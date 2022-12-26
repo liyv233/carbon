@@ -131,7 +131,7 @@ compute() {
   }
  
 if(this.carbon > 0) {
-  this.tree = (this.carbon / 270).toFixed(2)
+  this.tree = (this.carbon / 111).toFixed(2)
   this.carbon = (this.carbon).toFixed(2)
   $('.res-box').css('display','block')
 

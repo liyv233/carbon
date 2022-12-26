@@ -87,7 +87,7 @@ async init(week) {
  for (let index = 0; index < res.data.length; index++) {
     this.times.push(res.data[index].savetime)
         this.values.push(res.data[index].value)
-        this.trees.push((res.data[index].value/270).toFixed(2))
+        this.trees.push((res.data[index].value/111).toFixed(2))
          this.getEchartData()  
  }
 
