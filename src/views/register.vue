@@ -24,7 +24,7 @@
         </Login-text>
         <Login-text
           label="密码"
-          placeholder="密码应为8位以上字符或数字"
+          placeholder="密码应为8位以上字符与数字"
           rule="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
           type="password"
           ref="psdInput"

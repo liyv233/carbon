@@ -91,7 +91,6 @@ export default {
       is_compute:false ,
       carbon:0 ,
       tree:0,
-      index:0 ,
 
     };
   },
@@ -140,7 +139,7 @@ if(this.carbon > 0) {
 }
 } ,
 addItem() {
-  this.comItem.index = this.index++;
+  this.comItem.index = this.coms.length
 
   var item = {...this.comItem}
  
@@ -151,6 +150,13 @@ addItem() {
 } ,
 del(index) {
   this.coms.splice(index, 1)
+  if(this.coms.length == 1) {
+    this.coms[0].index = 0
+  }
+  for(var i = index  ; i < this.coms.length ; i++) {
+    this.coms[i].index--
+  }
+  
 } ,
 // 更新碳轨迹
 async updata() {
